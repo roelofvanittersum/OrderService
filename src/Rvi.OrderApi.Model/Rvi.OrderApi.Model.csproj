@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>A library generated from a OpenAPI doc</Description>
+    <Copyright>No Copyright</Copyright>
+    <Authors>OpenAPI</Authors>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <Version>1.0.0</Version>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Rvi.OrderAPI.Model</AssemblyName>
+    <PackageId>Rvi.OrderAPI.Model</PackageId>
+    <UserSecretsId>32d992fa-cb4f-4bbb-ae49-a30a3a3e8045</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+  </ItemGroup>
+  <Target Name="InstallOpenApi" BeforeTargets="Restore">
+    <Exec Command="npm install @openapitools/openapi-generator-cli@2.7.0 -g" />
+  </Target>
+  <Target Name="GenerateControllersAndModels" BeforeTargets="BeforeBuild">
+    <Exec Command="npx @openapitools/openapi-generator-cli@2.7.0 generate -i ../../openapi/order-api.yaml -g aspnetcore -o ../../  -t ../../openapi/custom-templates -c ../../openapi/order-api.generator.yaml --ignore-file-override=../../.openapi-generator-ignore" />
+    <ItemGroup>
+      <Compile Remove="Attributes/*.cs" />
+      <Compile Remove="Converters/*.cs" />
+      <Compile Remove="Controllers/*.cs" />
+      <Compile Remove="Models/*.cs" />
+      <Compile Include="Attributes/*.cs" />
+      <Compile Include="Converters/*.cs" />
+      <Compile Include="Controllers/*.cs" />
+      <Compile Include="Models/*.cs" />
+    </ItemGroup>
+  </Target>
+</Project>

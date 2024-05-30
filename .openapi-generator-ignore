@@ -1,0 +1,11 @@
+build.sh
+build.bat
+README.md
+
+Rvi.OrderApi.Model.Model.sln
+src/Rvi.OrderApi.Model/.gitignore
+src/Rvi.OrderApi.Model/OpenApi/TypeExtensions.cs
+src/Rvi.OrderApi.Model/Rvi.OrderApi.Model.csproj
+src/Rvi.OrderApi.Model/Rvi.OrderApi.Model.nuspec
+src/Rvi.OrderApi.Model/Authentication/ApiAuthentication.cs
+src/Rvi.OrderApi.Model/Formatters/InputFormatterStream.cs

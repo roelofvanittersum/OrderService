@@ -1,0 +1,13 @@
+Rvi.OrderAPI.Model.sln
+src/Rvi.OrderAPI.Model/Attributes/ValidateModelStateAttribute.cs
+src/Rvi.OrderAPI.Model/Controllers/OrderV1Api.cs
+src/Rvi.OrderAPI.Model/Converters/CustomEnumConverter.cs
+src/Rvi.OrderAPI.Model/Models/CreateOrderV1.cs
+src/Rvi.OrderAPI.Model/Models/CreateOrderV1Address.cs
+src/Rvi.OrderAPI.Model/Models/CreateOrderV1BankAccountDetails.cs
+src/Rvi.OrderAPI.Model/Models/CreateOrderV1CustomerDetails.cs
+src/Rvi.OrderAPI.Model/Models/ErrorResponseV1.cs
+src/Rvi.OrderAPI.Model/Models/ErrorResponseV1Error.cs
+src/Rvi.OrderAPI.Model/Models/OrderCreatedResponseV1.cs
+src/Rvi.OrderAPI.Model/Models/OrderStatusV1.cs
+src/Rvi.OrderAPI.Model/Models/ValidationErrorResponseV1.cs

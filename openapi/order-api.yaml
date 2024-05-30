@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  title: Dutch Insurance Order API
+  description: API for placing and fetching orders in the Dutch insurance market
+  version: 1.0.0
+servers:
+  - url: http://example.com/api/v1
+paths:
+  /orders:
+    post:
+      tags:
+        - OrderV1
+      summary: Create a new insurance order
+      operationId: CreateOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateOrderV1"
+      responses:
+        '201':
+          description: Order created successfully
+          content: 
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderCreatedResponseV1"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponseV1"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponseV1"
+  /orders/{orderId}:
+    get:
+      tags:
+        - OrderV1
+      summary: Get details of a specific order
+      operationId: GetOrderStatus
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          description: ID of the order to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderStatusV1"
+        '404':
+          description: Order not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponseV1"
+components:
+  schemas:
+    CreateOrderV1:
+      type: object
+      required:
+        - productId
+        - customerDetails
+        - address
+        - bankAccountDetails
+      properties:
+        productId:
+          type: string
+          description: Unique identifier for the insurance product
+        customerDetails:
+          type: object
+          description: Basic details of the customer
+          properties:
+            name:
+              type: string
+              description: Name of the customer
+            email:
+              type: string
+              format: email
+              description: Email address of the customer
+            phoneNumber:
+              type: string
+              description: Phone number of the customer
+        address:
+          type: object
+          description: Address details for the customer
+          properties:
+            street:
+              type: string
+              description: Street address
+            city:
+              type: string
+              description: City
+            postalCode:
+              type: string
+              description: Postal code
+        bankAccountDetails:
+          type: object
+          description: Bank account details for payment
+          properties:
+            accountNumber:
+              type: string
+              description: Bank account numberr
+            iban:
+              type: string
+              description: International Bank Account Number (IBAN)
+            bankName:
+              type: string
+              description: Name of the bank
+            accountHolderName:
+              type: string
+              description: Name of the account holder
+    OrderStatusV1:
+      type: object
+      description: Bank account details for payment
+      properties:
+        orderId:
+          type: string
+          description: Unique identifier for the insurance product
+        status:
+          type: string
+          pattern: "pending|in_progress|completed|failed"
+    OrderCreatedResponseV1:
+      type: object
+      required:
+        - orderId
+      properties: 
+        orderId:
+          type: string
+    ErrorResponseV1:
+      type: object
+      required:
+        - error
+        - description
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+              maxLength: 255
+        validationError:
+          type: array
+          items:
+            $ref: "#/components/schemas/ValidationErrorResponseV1"
+    ValidationErrorResponseV1:
+      type: object
+      properties:
+        property:
+          type: string
+        code:
+          type: string
+        description:
+          type: string
+          maxLength: 255

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Rvi.OrderApi.Database\Rvi.OrderApi.Database.csproj" />
+      <ProjectReference Include="..\Rvi.OrderApi.Domain\Rvi.OrderApi.Domain.csproj" />
+      <ProjectReference Include="..\Rvi.OrderApi.ExceptionHandling\Rvi.OrderApi.ExceptionHandling.csproj" />
+      <ProjectReference Include="..\Rvi.OrderApi.Model\Rvi.OrderApi.Model.csproj" />
+      <ProjectReference Include="..\Rvi.OrderApi.Services\Rvi.OrderApi.Services.csproj" />
+    </ItemGroup>
+
+</Project>

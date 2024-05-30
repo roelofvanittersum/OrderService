@@ -1,0 +1,7 @@
+operationIsAsync: true
+buildTarget: library
+classModifier: abstract
+generateBody: true
+packageName: Rvi.OrderAPI.Model
+operationResultTask: true
+sourceFolder: "src"
