@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi", "src\Rvi.OrderApi\Rvi.OrderApi.csproj", "{948A63BA-2F18-4289-91D7-9905B024F997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "openapi", "openapi", "{753C3800-24CC-41D5-996F-9B22A642DDF9}"
+	ProjectSection(SolutionItems) = preProject
+		openapi\order-api.yaml = openapi\order-api.yaml
+		openapi\order-api.generator.yaml = openapi\order-api.generator.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi.Model", "src\Rvi.OrderApi.Model\Rvi.OrderApi.Model.csproj", "{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generated", "generated", "{21935CC3-21CB-43D0-A6CD-F043E9F09390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi.Domain", "src\Rvi.OrderApi.Domain\Rvi.OrderApi.Domain.csproj", "{EA197D8D-A49D-46EF-9223-643308B26A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi.Services", "src\Rvi.OrderApi.Services\Rvi.OrderApi.Services.csproj", "{E7C1902D-4C5E-4DE7-B3E5-540E00588669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi.Database", "src\Rvi.OrderApi.Database\Rvi.OrderApi.Database.csproj", "{DF92E05C-A287-4921-8AF8-56CA9489C6A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rvi.OrderApi.ExceptionHandling", "src\Rvi.OrderApi.ExceptionHandling\Rvi.OrderApi.ExceptionHandling.csproj", "{1459E5A0-C7E0-42AA-8156-73A8B6F5CBBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{948A63BA-2F18-4289-91D7-9905B024F997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948A63BA-2F18-4289-91D7-9905B024F997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948A63BA-2F18-4289-91D7-9905B024F997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948A63BA-2F18-4289-91D7-9905B024F997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA197D8D-A49D-46EF-9223-643308B26A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA197D8D-A49D-46EF-9223-643308B26A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA197D8D-A49D-46EF-9223-643308B26A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA197D8D-A49D-46EF-9223-643308B26A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C1902D-4C5E-4DE7-B3E5-540E00588669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C1902D-4C5E-4DE7-B3E5-540E00588669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C1902D-4C5E-4DE7-B3E5-540E00588669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C1902D-4C5E-4DE7-B3E5-540E00588669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF92E05C-A287-4921-8AF8-56CA9489C6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF92E05C-A287-4921-8AF8-56CA9489C6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF92E05C-A287-4921-8AF8-56CA9489C6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF92E05C-A287-4921-8AF8-56CA9489C6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1459E5A0-C7E0-42AA-8156-73A8B6F5CBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1459E5A0-C7E0-42AA-8156-73A8B6F5CBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1459E5A0-C7E0-42AA-8156-73A8B6F5CBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1459E5A0-C7E0-42AA-8156-73A8B6F5CBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A11C2C0-D74C-4333-ADF4-EF7054C2CA90} = {21935CC3-21CB-43D0-A6CD-F043E9F09390}
+	EndGlobalSection
+EndGlobal
